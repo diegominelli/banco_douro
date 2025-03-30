@@ -10,6 +10,7 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             const Text(
               "Sistema de Gestão de Contas",
@@ -18,20 +19,33 @@ class LoginScreen extends StatelessWidget {
                 fontSize: 32,
               ),
             ),
+            const SizedBox(height: 16),
             const TextField(
               decoration: InputDecoration(
                 label: Text("E-mail"),
               ),
             ),
+            const SizedBox(height: 16),
             const TextField(
               obscureText: true,
               decoration: InputDecoration(
                 label: Text("Senha"),
               ),
             ),
+            const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {},
-              child: const Text("Entrar"),
+              style: const ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(
+                  Color(0xFFFFA902),
+                ),
+              ),
+              child: const Text(
+                "Entrar",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
             )
           ],
         ),
