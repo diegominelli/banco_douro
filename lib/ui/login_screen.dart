@@ -1,3 +1,4 @@
+import 'package:banco_douro/ui/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -51,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                       },
                       style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(
-                          Color(0xFFFFA902),
+                          AppColors.orange,
                         ),
                       ),
                       child: const Text(
