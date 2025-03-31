@@ -47,7 +47,6 @@ class AccountService {
     }
 
     String content = json.encode(listContent);
-    print(content);
 
     Response response = await post(
       Uri.parse(url),
