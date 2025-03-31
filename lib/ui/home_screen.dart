@@ -21,13 +21,16 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: AccountWidget(
-        account: Account(
-            id: "ID001",
-            name: "Diego",
-            lastName: "Minelli",
-            balance: 200,
-            accountType: null),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: AccountWidget(
+          account: Account(
+              id: "ID001",
+              name: "Diego",
+              lastName: "Minelli",
+              balance: 200,
+              accountType: null),
+        ),
       ),
     );
   }
