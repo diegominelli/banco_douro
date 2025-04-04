@@ -1,3 +1,4 @@
+import 'package:banco_douro/models/account.dart';
 import 'package:banco_douro/services/account_service.dart';
 import 'package:banco_douro/ui/widgets/account_widget.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,20 @@ class HomeScreen extends StatelessWidget {
                   );
                 case ConnectionState.done:
                   {
-                    return const Text("A operação acabou");
+                    if (snapshot.data == null || snapshot.data!.isEmpty) {
+                      return const Center(
+                        child: Text("Nenhuma conta recebida."),
+                      );
+                    } else {
+                      List<Account> listAccounts = snapshot.data!;
+                      return ListView.builder(
+                        itemCount: listAccounts.length,
+                        itemBuilder: (context, index) {
+                          Account account = listAccounts[index];
+                          return AccountWidget(account: account);
+                        },
+                      );
+                    }
                   }
               }
             },
