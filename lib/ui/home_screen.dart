@@ -1,6 +1,7 @@
 import 'package:banco_douro/models/account.dart';
 import 'package:banco_douro/services/account_service.dart';
 import 'package:banco_douro/ui/widgets/account_widget.dart';
+import 'package:banco_douro/ui/widgets/add_account_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:banco_douro/ui/styles/colors.dart';
 
@@ -36,7 +37,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            builder: (context) {
+              return const AddAccountModal();
+            },
+          );
+        },
         backgroundColor: AppColors.orange,
         child: const Icon(
           Icons.add,
